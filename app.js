@@ -23,7 +23,8 @@ function pageLoaded() {
     "afterend",
     `<div><button id = "add">Add More</button></div>`
   );
-
+  //TODO RÁ KELL TENNI AZ ÚJ ITEMEKRE IS AZ ESEMÉNYFIGYELŐT
+  //If multiple identical EventListeners are registered on the same EventTarget with the same parameters, the duplicate instances are discarded. They do not cause the EventListener to be called twice, and they do not need to be removed manually
   function addClick() {
     root.insertAdjacentHTML("beforeend", oneListItem);
     let removeBtnList = root.querySelectorAll(".deleteButton");
@@ -43,8 +44,6 @@ function pageLoaded() {
   for (let i = 0; i < removeBtnList.length; i++) {
     removeBtnList[i].addEventListener("click", deleteListItem);
   }
-
-  //TODO RÁ KELL TENNI AZ ÚJ ITEMEKRE IS AZ ESEMÉNYFIGYELŐT
 }
 
 window.addEventListener("load", pageLoaded);
