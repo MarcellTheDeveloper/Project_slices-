@@ -26,6 +26,10 @@ function pageLoaded() {
 
   function addClick() {
     root.insertAdjacentHTML("beforeend", oneListItem);
+    let removeBtnList = root.querySelectorAll(".deleteButton");
+    for (let i = 0; i < removeBtnList.length; i++) {
+      removeBtnList[i].addEventListener("click", deleteListItem);
+    }
   }
   document.querySelector("#add").addEventListener("click", addClick);
 
